@@ -1,0 +1,16 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4335
+
+normal mode:
+Change the behavior of the super star(*) key. Vim don't jump to the next match when * is pressed.
+
+visual mode:
+Add * key support for visual mode. You can select some text (using visual mode) and then press * for searching (don't jump to the next match).
+
+Thinks to: 
+https://github.com/bronson/vim-visual-star-search (for visual mode star key support)
+
+for chinese user:
+=================
+普通模式下，修改了系统默认的 * 按键的行为，按下 * 后，Vim 不再会自动跳转到下一个匹配处了
+可视模式下，增加了 * 按键功能，首先可视模式下选择一段文字，然后敲击 * 可以搜索选中文字（此功能来源于 https://github.com/bronson/vim-visual-star-search&#65289;
+
