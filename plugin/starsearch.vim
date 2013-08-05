@@ -1,6 +1,6 @@
 " Name: Star search
 " Author: Name5566 <name5566@gmail.com>
-" Version: 0.1.0
+" Version: 0.1.1
 
 if exists('loaded_starsearch')
 	finish
@@ -25,20 +25,24 @@ function! s:VStarsearch_searchCWord()
 		let @/ = wordStr
 	endif
 
+	let savedUnnamed = @"
 	let savedS = @s
 	normal! "syiw
 	if wordStr != @s
 		normal! w
 	endif
 	let @s = savedS
+	let @" = savedUnnamed
 endfunction
 
 " https://github.com/bronson/vim-visual-star-search/
 function! s:VStarsearch_searchVWord()
+	let savedUnnamed = @"
 	let savedS = @s
 	normal! gv"sy
 	let @/ = '\V' . substitute(escape(@s, '\'), '\n', '\\n', 'g')
 	let @s = savedS
+	let @" = savedUnnamed
 endfunction
 
 nnoremap <silent> * :call <SID>VStarsearch_searchCWord()<CR>:set hls<CR>
